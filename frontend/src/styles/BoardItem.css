@@ -1,0 +1,60 @@
+.board-item-info > * {
+  margin: 0;
+}
+
+.board-item-info > h4 {
+  color: #606163;
+  font-size: 20px;
+}
+
+.board-item-info > p {
+  color: #606163;
+  font-size: 12px;
+}
+
+.board-display {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: start;
+}
+.board-display > a {
+  font-family: Roboto;
+  margin: 10px 20px;
+  padding: 5px 5px 10px 5px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.board-display > a:hover {
+  background-color: #efefef;
+}
+
+/* ///// */
+
+.board {
+  width: 309px;
+  height: 280px;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 5px;
+  column-width: 102px;
+  column-count: 3;
+  column-gap: 1px;
+}
+
+.board-pin img {
+  width: 101px;
+  border-radius: 5px;
+  margin: 1px;
+  margin-bottom: 0px;
+}
+
+.board-item-img {
+  width: 90px;
+  display: inline-flex;
+  margin: auto 1px;
+  border-radius: 5px;
+}

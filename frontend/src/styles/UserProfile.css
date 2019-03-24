@@ -1,0 +1,173 @@
+#profile-page-username {
+  font-family: Roboto;
+  color: black;
+  font-size: 35px;
+  margin-bottom: 0;
+}
+
+.fa-plus {
+  padding-right: 70px;
+  font-size: 25px;
+  color: darkgrey;
+}
+
+.profile-page > * {
+  padding: 20px 350px;
+}
+
+.profile-left-div {
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.profile-item-links {
+  display: inline-flex;
+  padding-left: 10px;
+}
+
+.profile-item-links > * {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  /* padding: initial; */
+  color: #8e8e8e;
+  margin: 6 10px;
+  padding: 10px;
+}
+
+.profile-item-links > *:hover {
+  /* background-color: #efefef;
+  border-radius: 9999px; */
+  color: black;
+  text-decoration: underline;
+}
+
+.profile-item-links .active {
+  background-color: #efefef;
+  border-radius: 9999px;
+}
+
+.add-stuff-menu {
+  font-family: Roboto;
+  color: #333;
+  font-weight: bold;
+  display: inline-grid;
+  font-size: 15px;
+  position: absolute;
+  top: 112px;
+  left: 350px;
+  width: 150px;
+  height: 100px;
+  z-index: 2;
+  padding: 20px;
+  padding: 0;
+  margin: auto;
+  background-color: white; /*dim the background*/
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.add-stuff-menu > a {
+  text-decoration: none;
+  color: black;
+}
+.add-stuff-menu > * {
+  width: 100%;
+  height: 100%;
+}
+
+.add-stuff-menu > *:hover {
+  background-color: #efefef;
+}
+
+.create-board:hover {
+  cursor: pointer;
+}
+
+.submit-board-button {
+  height: 40px;
+  width: 120px;
+  padding: 6px 12px;
+  background: #cccccc;
+  border: 0;
+  font-size: 14px;
+  margin: 12px auto;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(230, 13, 34);
+  font-family: Roboto;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.board-header {
+  display: inline-flex;
+}
+.board-header h2 {
+  width: 450px;
+  margin-bottom: 20px;
+}
+.board-header div {
+  margin-top: 20px;
+}
+
+.fa-times {
+  font-size: 20px;
+}
+
+.name-and-input {
+  border-top: 1px solid lightgrey;
+  padding-top: 25px;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+.name-and-input p {
+  margin-left: 15px;
+}
+
+.name-and-input input {
+  width: 80%;
+  font-family: Open Sans;
+  font-size: 18px;
+  height: 32px;
+  margin: auto;
+  padding-left: 5px;
+  font-weight: bold;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.board-modal {
+  z-index: 30;
+  margin: auto;
+  margin-top: 100px;
+  margin-left: 400px;
+  position: fixed;
+  width: 40%;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.board-modal-container {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0.9;
+  z-index: 4;
+  top: 0;
+  position: fixed;
+  cursor: zoom-out;
+}
+
+.fix-background {
+  position: fixed;
+}

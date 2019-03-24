@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding:0;
+  }
+
+.Homepage {
+  padding-top: 60px;
+  text-align: center;
+}
+
+#line-under-nav {
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+  border-top: 1px solid lightgrey;
+  opacity: .3;
+}

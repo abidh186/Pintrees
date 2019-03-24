@@ -1,0 +1,142 @@
+.pinlist-page {
+  margin: auto;
+  margin-top: 20px;
+}
+
+.pins-display {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 1300px;
+  height: 100%;
+
+  line-height: auto;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  column-gap: 0px;
+}
+
+@media (max-width: 1299px) {
+  .pins-display {
+    width: 1040px;
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+@media (max-width: 1039px) {
+  .pins-display {
+    width: 780px;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 799px) {
+  .pins-display {
+    width: 520px;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+/* .pins-display {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 1000px) {
+  .pins-display {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+  }
+}
+@media (max-width: 800px) {
+  .pins-display {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 400px) {
+  .pins-display {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+.pins-display {
+  width: 85%;
+  line-height: auto;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  column-gap: 0px;
+} */
+.pin-div {
+  width: 100%;
+  height: auto;
+}
+
+.img-div:hover {
+  background-color: #efefef;
+}
+
+.img-div {
+  padding: 5px 15px 8px 10px;
+  border-radius: 10px;
+}
+
+a.pin-list-item-link {
+  text-decoration: none;
+}
+
+.img-div img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  height: auto;
+}
+
+p.pin-list-hover-message {
+  display: none;
+}
+
+.pin-list-item-message-div {
+  margin-top: 5px;
+  text-align: right;
+  color: black;
+}
+
+.pin-div:hover p.pin-list-hover-message {
+  display: inline;
+  padding-right: 115px;
+  color: black;
+}
+
+p.img-dots {
+  text-align: right;
+  font-family: Roboto;
+  font-size: 15px;
+  display: inline;
+  padding: 5px;
+}
+
+p.img-dots:hover {
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
+/* div.single-pin-display {
+  width: 80%;
+  margin: auto;
+} */
