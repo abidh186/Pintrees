@@ -1,6 +1,7 @@
 import * as boardApi from "../utils/boardApi";
 
 export let RECEIVE_BOARDS = "RECEIVE_BOARDS";
+export let CREATE_BOARD = "CREATE_BOARD";
 
 export const receivedBoards = boards => {
   return {
@@ -9,11 +10,29 @@ export const receivedBoards = boards => {
   };
 };
 
+export const createdBoard = board => {
+  return {
+    type: CREATE_BOARD,
+    board
+  };
+};
+
 export const getBoardsById = user_id => dispatch => {
   return boardApi
     .getBoardsById(user_id)
     .then(res => {
       return dispatch(receivedBoards(res.data.boards));
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+export const createBoard = board => dispatch => {
+  return boardApi
+    .createBoard(board)
+    .then(res => {
+      return dispatch(createdBoard(res.data.board));
     })
     .catch(err => {
       console.log(err);

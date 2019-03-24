@@ -13,18 +13,42 @@ class UserProfile extends React.Component {
       highlight: true,
       addStuff: false,
       displayBoard: false,
-      boardTitle: ""
+      boardTitle: "",
+      missingBoard: false
     };
   }
 
   handleChange = e => {
     this.setState({
-      boardTitle: e.target.value
+      boardTitle: e.target.value,
+      missingBoard: false
     });
   };
 
-  submitForm = e => {
+  executeCreateBoard = async data => {
+    let { currentUser } = this.props;
+    await this.props.createBoard(data);
+    await this.props.getBoardsById(currentUser.id);
+  };
+
+  submitCreateForm = e => {
     e.preventDefault();
+    let { boardTitle } = this.state;
+    if (!boardTitle) {
+      return this.setState({
+        missingBoard: true
+      });
+    }
+    let userId = parseInt(this.props.currentUser.id, 10);
+    let boardData = {
+      user_id: userId,
+      title: boardTitle
+    };
+    this.setState({
+      missingBoard: false,
+      displayBoard: false
+    });
+    return this.executeCreateBoard(boardData);
   };
 
   handleClick = event => {
@@ -44,7 +68,8 @@ class UserProfile extends React.Component {
   hideAddOption = () => {
     if (this.state.addStuff) {
       this.setState({
-        addStuff: false
+        addStuff: false,
+        missingBoard: false
       });
     }
   };
@@ -53,7 +78,8 @@ class UserProfile extends React.Component {
     if (this.state.displayBoard) {
       this.setState({
         displayBoard: false,
-        addStuff: false
+        addStuff: false,
+        missingBoard: false
       });
     }
   };
@@ -68,7 +94,7 @@ class UserProfile extends React.Component {
 
   displayBoardForm = () => {
     let { currentUser } = this.props;
-    let { displayBoard } = this.state;
+    let { displayBoard, missingBoard } = this.state;
     if (displayBoard) {
       return (
         <div className="board-parent">
@@ -80,7 +106,7 @@ class UserProfile extends React.Component {
             }}
           />
           <div className="board-modal">
-            <form>
+            <form onSubmit={this.submitCreateForm}>
               <div className="board-header">
                 <h2>Create Board</h2>
                 <div>
@@ -91,7 +117,11 @@ class UserProfile extends React.Component {
               <br />
               <div className="name-and-input">
                 <p>Name</p>
-                <input onChange={this.handleChange} type="text" />
+                <input
+                  className={missingBoard ? "missing-board" : "board-input"}
+                  onChange={this.handleChange}
+                  type="text"
+                />
               </div>
               <br />
               <div>

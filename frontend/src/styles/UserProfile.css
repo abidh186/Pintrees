@@ -140,7 +140,6 @@
   font-weight: bold;
   outline: none;
   border-radius: 5px;
-  border: 1px solid grey;
 }
 
 .board-modal {
@@ -170,4 +169,12 @@
 
 .fix-background {
   position: fixed;
+}
+
+.board-input {
+  border: 1px solid grey;
+}
+
+.missing-board {
+  border: 2px solid red;
 }
