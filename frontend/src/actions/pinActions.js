@@ -28,7 +28,6 @@ export const createdPin = postPin => {
 
 export const getPinsByBoardId = board_id => dispatch => {
   return pinApi.getPinsByBoardId(board_id).then(res => {
-    debugger;
     return dispatch(receivedPins(res.data.pins));
   });
 };

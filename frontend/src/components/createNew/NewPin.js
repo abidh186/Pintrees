@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import "../../styles/NewPin.css";
 
 class NewPin extends Component {
@@ -118,11 +119,24 @@ class NewPin extends Component {
     if (!Object.values(this.props.boards).length) return null;
     return (
       <div className="new-pin-parent">
+        <NavLink
+          className="back-from-new-pin"
+          to={`/${this.props.currentUser.email}/`}
+        >
+          <i className="fas fa-chevron-left" />
+          <p>Back</p>
+        </NavLink>
         <div className="new-pin-display">
           <div className="submit-button-div">
-            {this.state.missingBoard ? <p>Please select a board</p> : null}
-            {this.state.missingImg ? <p>Please upload an Image</p> : null}
-            {this.state.missingTitle ? <p>Please provide a Title</p> : null}
+            {this.state.missingBoard ? (
+              <p className="post-pin-error">Please select a Board</p>
+            ) : null}
+            {this.state.missingImg ? (
+              <p className="post-pin-error">Please upload an Image</p>
+            ) : null}
+            {this.state.missingTitle ? (
+              <p className="post-pin-error">Please provide a Title</p>
+            ) : null}
             <button
               className="submit-button"
               onClick={this.onSubmitPinForm}

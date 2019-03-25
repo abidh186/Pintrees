@@ -70,22 +70,27 @@ a.pin-list-item-link {
 }
 
 p.pin-list-hover-message {
-  display: none;
+  opacity: 0;
+  margin: 5px 0px 0px 0px;
 }
 
 .pin-list-item-message-div {
-  margin-top: 5px;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
   text-align: right;
   color: black;
 }
 
 .pin-div:hover p.pin-list-hover-message {
   display: inline;
-  padding-right: 115px;
+  opacity: 1;
+  /* padding-right: 115px; */
   color: black;
 }
 
 p.img-dots {
+  margin: 0;
   text-align: right;
   font-family: Roboto;
   font-size: 15px;

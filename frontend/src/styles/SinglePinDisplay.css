@@ -1,0 +1,129 @@
+.pin-display-parent {
+  padding-top: 30px;
+  background-color: #efefef;
+  min-height: 600px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.pin-display-modal {
+  width: 830px;
+  height: 500px;
+  padding: 30px 20px;
+  background-color: white;
+  margin: auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pin-img-div {
+  width: 60%;
+  overflow: hidden;
+}
+
+.pin-img-div img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.pin-info-div {
+  width: 35%;
+  padding-top: 20px;
+}
+
+.back-from-pin {
+  color: #373737;
+  height: 40px;
+  width: 130px;
+  position: absolute;
+  top: 112px;
+  right: 154px;
+  left: 24px;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Roboto;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+}
+
+.back-from-pin:hover {
+  background-color: #cacbcc;
+}
+
+.fa-chevron-left {
+  /* color: red; */
+  margin: 13px 8px auto 30px;
+}
+
+.back-from-pin p {
+  display: flex;
+  margin: auto;
+  margin-left: 0px;
+  margin-right: 15px;
+}
+
+.board-picker-save-pin {
+  height: 41px;
+  outline: none;
+  width: 95%;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  color: grey;
+  border: 1px solid #babcbc;
+  display: flex;
+}
+
+.select-div {
+  margin: auto;
+}
+
+.save-pin-form {
+  display: flex;
+}
+
+.pin-info-div h1 {
+  margin-top: 40px;
+}
+
+.submit-button-save {
+  display: flex;
+  padding: 9px 20px;
+  background: #cccccc;
+  border: 0;
+  font-size: 14px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: rgb(230, 13, 34);
+  font-family: Roboto;
+  color: white;
+  outline: none;
+  margin-right: 0px;
+}
+
+.fa-thumbtack {
+  padding-right: 5px;
+}
+
+.submit-button-save:hover {
+  background-color: #d50c22;
+}
+
+.submit-button-div {
+  display: flex;
+}
+
+.pin-saved-message {
+  font-family: Open Sans;
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: red;
+  margin: auto;
+  font-weight: bold;
+}
