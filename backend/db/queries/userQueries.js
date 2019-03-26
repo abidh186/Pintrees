@@ -2,6 +2,21 @@ const db = require("../connection");
 
 const authHelpers = require("../../auth/helpers");
 
+const getAllUserIds = (req, res, next) => {
+  db.any("SELECT * FROM users")
+    .then(users => {
+      let userIds = users.map(user => {
+        return user.id;
+      });
+      res.status(200).json({
+        status: "success",
+        userIds: userIds,
+        message: "all user ids"
+      });
+    })
+    .catch(err => next(err));
+};
+
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
   if (req.body.age === "") {
@@ -49,19 +64,19 @@ const isLoggedIn = (req, res) => {
 
 const getBoardsByUserId = (req, res, next) => {
   let userId = parseInt(req.params.user_id);
-  db.any(
-    "SELECT * FROM boards WHERE boards.user_id = $1", [userId]
-  ).then(boards => {
-    res.status(200).json({
-      status: "success",
-      boards: boards,
-      message: "all boards for a single user"
+  db.any("SELECT * FROM boards WHERE boards.user_id = $1", [userId])
+    .then(boards => {
+      res.status(200).json({
+        status: "success",
+        boards: boards,
+        message: "all boards for a single user"
+      });
     })
-  }).catch(err => {
-    console.log(err)
-    next();
-  })
-}
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+};
 
 const getPinsByUserId = (req, res, next) => {
   let userId = parseInt(req.params.user_id);
@@ -88,5 +103,6 @@ module.exports = {
   loginUser,
   isLoggedIn,
   getBoardsByUserId,
-  getPinsByUserId
+  getPinsByUserId,
+  getAllUserIds
 };

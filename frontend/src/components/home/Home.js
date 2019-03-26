@@ -10,25 +10,33 @@ import SingleBoardContainer from "../boards/SingleBoardContainer.js";
 import NewPinContainer from "../createNew/NewPinContainer.js";
 
 class Home extends Component {
+  modifyEmail = email => {
+    let idx = email.indexOf("@");
+    if (idx !== -1) {
+      return email.slice(0, idx);
+    }
+    return email;
+  };
   render() {
     if (!this.props.currentUser) return null;
     let { email } = this.props.currentUser;
+    let username = this.modifyEmail(email);
     return (
       <div className="Homepage">
         <NavbarContainer />
         <Switch>
           <Route
             exact
-            path={`/${email}/boards/:id`}
+            path={`/${username}/boards/:id`}
             component={SingleBoardContainer}
           />
           <Route exact path="/" component={PinListContainer} />
           <Route
             exact
-            path={`/${email}/pinbuilder`}
+            path={`/${username}/pinbuilder`}
             component={NewPinContainer}
           />
-          <Route path={`/${email}`} component={UserProfileContainer} />
+          <Route path={`/${username}`} component={UserProfileContainer} />
           <Route
             exact
             path={`/pins/:id`}

@@ -1,6 +1,6 @@
 nav {
   display: inline-flex;
-  width: 100%;
+  width: 98%;
   height: 64px;
   border-bottom: #efefef solid 1px;
 }
@@ -20,7 +20,7 @@ nav {
 
 .search-box {
   height: 40px;
-  width: 780px;
+  width: 70%;
   background-color: #efefef;
   align-self: center;
   border-radius: 6px;
@@ -30,8 +30,13 @@ nav {
   box-sizing: border-box;
 }
 
+.search-box {
+  width: 100%;
+}
+
 .search-input {
   outline: none;
+  width: 100%;
 }
 
 .search-box:focus-within {
@@ -65,7 +70,7 @@ nav {
 
 .search-input {
   margin-top: 8px;
-  width: 730px;
+  width: 100%;
   background-color: transparent;
   border: none;
   font-size: 15px;

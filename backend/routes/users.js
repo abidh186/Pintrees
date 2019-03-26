@@ -9,7 +9,8 @@ const {
   isLoggedIn,
   logoutUser,
   getBoardsByUserId,
-  getPinsByUserId
+  getPinsByUserId,
+  getAllUserIds
 } = require("../db/queries/userQueries.js");
 
 /* GET users listing. */
@@ -19,5 +20,6 @@ router.post("/login", passport.authenticate("local", {}), loginUser);
 router.get("/getuser", isLoggedIn);
 router.post("/logout", loginRequired, logoutUser);
 router.get("/:user_id/pins", getPinsByUserId);
+router.get("/", getAllUserIds);
 
 module.exports = router;

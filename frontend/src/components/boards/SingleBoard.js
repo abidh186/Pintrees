@@ -7,7 +7,6 @@ class SingleBoard extends React.Component {
   componentDidMount = () => {
     let board_id = this.props.match.params.id;
     let user_id = this.props.currentUser.id;
-    // debugger;
     this.props.getBoardsById(user_id);
     this.props.getPinsByBoardId(board_id);
   };
@@ -31,13 +30,7 @@ class SingleBoard extends React.Component {
 
   render() {
     if (!this.props.pins.length) return null;
-    // if(!this.props.match.params.id) return null;
     let id = this.props.match.params.id;
-    // if (!Object.values(this.props.boards).length) return null;
-    // if (
-    //   Object.values(this.props.pins).length > this.props.boards[id].pins.length
-    // )
-    // return null;
     let title = this.props.boards[id].title;
     return (
       <div className="single-board-page">

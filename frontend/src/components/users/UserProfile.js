@@ -93,7 +93,6 @@ class UserProfile extends React.Component {
   };
 
   displayBoardForm = () => {
-    let { currentUser } = this.props;
     let { displayBoard, missingBoard } = this.state;
     if (displayBoard) {
       return (
@@ -134,6 +133,14 @@ class UserProfile extends React.Component {
     }
   };
 
+  modifyEmail = email => {
+    let idx = email.indexOf("@");
+    if (idx !== -1) {
+      return email.slice(0, idx);
+    }
+    return email;
+  };
+
   render() {
     //use email as username for now
     let { displayBoard } = this.state;
@@ -145,7 +152,7 @@ class UserProfile extends React.Component {
           <h1>One Moment Please...</h1>
         </div>
       );
-    let email = currentUser.email;
+    let username = this.modifyEmail(currentUser.email);
     return (
       <div onClick={this.hideAddOption}>
         {displayBoard ? this.displayBoardForm() : null}
@@ -153,7 +160,10 @@ class UserProfile extends React.Component {
           <div className="profile-page">
             {this.state.addStuff ? (
               <div className="add-stuff-menu">
-                <NavLink onClick={this.handleClick} to={`/${email}/pinbuilder`}>
+                <NavLink
+                  onClick={this.handleClick}
+                  to={`/${username}/pinbuilder`}
+                >
                   <p>Create Pin</p>
                 </NavLink>
                 <div className="create-board" onClick={this.showCreateBoard}>
@@ -166,27 +176,27 @@ class UserProfile extends React.Component {
                 <i onClick={this.addClick} className="fas fa-plus" />
               </div>
               <div>
-                <h2 id="profile-page-username">{email}</h2>
+                <h2 id="profile-page-username">{username}</h2>
               </div>
             </div>
 
             <div className="profile-item-links">
               <NavLink
                 className={this.state.highlight ? "active" : null}
-                to={`/${email}/boards`}
+                to={`/${username}/boards`}
               >
                 Boards
               </NavLink>
-              <NavLink onClick={this.handleClick} to={`/${email}/pins`}>
+              <NavLink onClick={this.handleClick} to={`/${username}/pins`}>
                 Pins
               </NavLink>
             </div>
           </div>
           <Switch>
-            <Route path={`/${email}/pins`} component={UserPinsContainer} />
+            <Route path={`/${username}/pins`} component={UserPinsContainer} />
             <Route
               exact
-              path={`/(${email}|${email}/boards)`}
+              path={`/(${username}|${username}/boards)`}
               component={BoardDisplayContainer}
             />
           </Switch>

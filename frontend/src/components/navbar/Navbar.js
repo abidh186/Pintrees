@@ -9,8 +9,19 @@ import "../../styles/Navbar.css";
 //   />
 // import { Search } from "./Search";
 // <Search />
+// <NavLink className="nav-link right-links" to={"/c"}>
+//   Following{" "}
+// </NavLink>
 
 export default class Navbar extends Component {
+  modifyEmail = email => {
+    let idx = email.indexOf("@");
+    if (idx !== -1) {
+      return email.slice(0, idx);
+    }
+    return email;
+  };
+
   render() {
     const { logoutUser, currentUser } = this.props;
     if (!currentUser)
@@ -19,6 +30,7 @@ export default class Navbar extends Component {
           <h1>One Moment Please...</h1>
         </div>
       );
+    let username = this.modifyEmail(currentUser.email);
     return (
       <nav>
         <NavLink className="logo-link" to={"/"}>
@@ -38,15 +50,8 @@ export default class Navbar extends Component {
         <NavLink className="nav-link right-links" exact to={"/"}>
           Home{" "}
         </NavLink>
-        <NavLink className="nav-link right-links" to={"/c"}>
-          Following{" "}
-        </NavLink>
-        <NavLink
-          className="nav-link right-links"
-          exact
-          to={`/${currentUser.email}`}
-        >
-          {currentUser.email}
+        <NavLink className="nav-link right-links" exact to={`/${username}`}>
+          {username}
         </NavLink>
         <p className="nav-link right-links" onClick={logoutUser}>
           Logout

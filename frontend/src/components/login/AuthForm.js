@@ -42,6 +42,14 @@ class AuthForm extends Component {
     this.props.loginUser(user);
   };
 
+  modifyEmail = email => {
+    let idx = email.indexOf("@");
+    if (idx !== -1) {
+      return email.slice(0, idx);
+    }
+    return email;
+  };
+
   handleRegisterSubmit = async e => {
     const { email, password, age } = this.state;
     let user = { email, password, age };
@@ -52,6 +60,7 @@ class AuthForm extends Component {
   };
 
   render() {
+    if (!Object.values(this.props.pins).length) return null;
     const { email, password, age } = this.state;
     return (
       <div>

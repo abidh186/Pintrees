@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import AuthForm from "./AuthForm.js";
 import { registerUser, loginUser } from "../../actions/sessionActions.js";
 import { fetchAllPins } from "../../actions/pinActions.js";
+import { createBoard } from "../../actions/boardActions.js";
 
 const mapStateToProps = state => {
   return {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    createBoard: board => dispatch(createBoard(board)),
     registerUser: user => dispatch(registerUser(user)),
     loginUser: user => dispatch(loginUser(user)),
     fetchAllPins: () => dispatch(fetchAllPins())

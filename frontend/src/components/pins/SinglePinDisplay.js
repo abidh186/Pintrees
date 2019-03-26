@@ -110,7 +110,6 @@ export class SinglePinDisplay extends React.Component {
 
   render() {
     // debugger;
-    console.log("here ", this.state);
     if (!this.props.pin) return null;
     // let { boards } = this.props;
     // let { hasBoards } = this.state;

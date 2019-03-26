@@ -13,6 +13,7 @@ export const loginUser = user => dispatch => {
   return sessionApiUtil
     .loginUser(user)
     .then(res => {
+      // debugger;
       Auth.authenticateUser(res.data.email);
       return dispatch(receiveCurrentUser(res.data));
     })
