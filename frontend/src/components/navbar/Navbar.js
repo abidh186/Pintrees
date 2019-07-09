@@ -22,6 +22,11 @@ export default class Navbar extends Component {
     return email;
   };
 
+  logoutAndClearBoards = async () => {
+    await this.props.logoutUser();
+    await this.props.clearBoards();
+  };
+
   render() {
     const { logoutUser, currentUser } = this.props;
     if (!currentUser)
@@ -53,7 +58,7 @@ export default class Navbar extends Component {
         <NavLink className="nav-link right-links" exact to={`/${username}`}>
           {username}
         </NavLink>
-        <p className="nav-link right-links" onClick={logoutUser}>
+        <p className="nav-link right-links" onClick={this.logoutAndClearBoards}>
           Logout
         </p>
       </nav>

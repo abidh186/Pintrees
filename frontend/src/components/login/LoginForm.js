@@ -4,11 +4,6 @@ import { NavLink } from "react-router-dom";
 import "../../styles/landing.css";
 
 class LoginForm extends Component {
-  // componentDidMount = () => {
-  //   let user_id = this.props.currentUser.id;
-  //   this.props.getBoardsById(user_id);
-  // };
-
   checkForBoards = () => {
     let { boards } = this.props;
     let filteredBoards = boards.filter(board => {

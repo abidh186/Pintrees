@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
     pins: Object.values(state.pins),
-    boards: state.boards
+    board: state.boards[ownProps.match.params.id]
   };
 };
 

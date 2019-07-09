@@ -12,16 +12,16 @@ class BoardItem extends Component {
     if (!board.pins) return null;
     let imgArr = board.pins;
     let newArr = [];
-    if (imgArr.length > 8) {
-      newArr = imgArr.slice(0, 8);
+    if (imgArr.length > 6) {
+      newArr = imgArr.slice(0, 6);
     } else {
       newArr = imgArr;
     }
 
-    let imgs = newArr.map(pinId => {
+    let imgs = newArr.map((pinId, idx) => {
       return (
-        <div key={pinId} className="board-pin">
-          <img src={this.props.pins[pinId].pinimg_url} alt="" />
+        <div className="board-item-img">
+          <img key={pinId} src={this.props.pins[pinId].pinimg_url} alt="" />
         </div>
       );
     });
@@ -32,7 +32,7 @@ class BoardItem extends Component {
     let { board } = this.props;
     if (Object.values(this.props.pins).length < 50) return null;
     return (
-      <div>
+      <div className="board-container">
         <div className="board">{this.displayBoardItem()}</div>
         <div className="board-item-info">
           <h4>{board.title}</h4>

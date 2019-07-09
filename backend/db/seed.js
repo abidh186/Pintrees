@@ -107,7 +107,7 @@ let pinArr = [
 
 let users = [];
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 5; i++) {
   let email = faker.internet.email();
   let username = faker.internet.userName();
   let password_digest = faker.internet.password();

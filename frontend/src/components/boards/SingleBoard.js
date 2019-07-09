@@ -29,13 +29,12 @@ class SingleBoard extends React.Component {
   };
 
   render() {
-    if (!this.props.pins.length) return null;
-    let id = this.props.match.params.id;
-    let title = this.props.boards[id].title;
+    let { board } = this.props;
+    if (!board) return null;
     return (
       <div className="single-board-page">
-        <h2>Board id: {id} </h2>
-        <h2>Board title: {title} </h2>
+        <h2>Board id: {board.id} </h2>
+        <h2>Board title: {board.title} </h2>
         <div>{this.fetchPinList()}</div>
       </div>
     );

@@ -169,7 +169,7 @@
 
 .fix-background {
   position: fixed;
-  padding-left: 320px;
+  /* padding-left: 320px; */
 }
 
 .board-input {

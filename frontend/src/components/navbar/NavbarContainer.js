@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { logoutUser, getUser } from "../../actions/sessionActions.js";
+import { clearBoards } from "../../actions/boardActions.js";
 import Navbar from "./Navbar.js";
 
 const mapStateToProps = state => {
@@ -12,7 +13,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     logoutUser: () => dispatch(logoutUser()),
-    getUser: () => dispatch(getUser())
+    getUser: () => dispatch(getUser()),
+    clearBoards: () => dispatch(clearBoards())
   };
 };
 

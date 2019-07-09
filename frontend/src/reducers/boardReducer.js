@@ -1,4 +1,4 @@
-import { RECEIVE_BOARDS } from "../actions/boardActions.js";
+import { RECEIVE_BOARDS, CLEAR_BOARDS } from "../actions/boardActions.js";
 import { RECEIVE_PINS } from "../actions/pinActions.js";
 import deepClone from "lodash/cloneDeep";
 import merge from "lodash/merge";
@@ -32,6 +32,8 @@ const BoardReducer = (oldState = {}, action) => {
         }
       });
       return copiedState;
+    case CLEAR_BOARDS:
+      return {};
     default:
       return oldState;
   }

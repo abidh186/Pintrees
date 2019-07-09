@@ -1,7 +1,12 @@
 import * as boardApi from "../utils/boardApi";
 
-export let RECEIVE_BOARDS = "RECEIVE_BOARDS";
-export let CREATE_BOARD = "CREATE_BOARD";
+export const RECEIVE_BOARDS = "RECEIVE_BOARDS";
+export const CREATE_BOARD = "CREATE_BOARD";
+export const CLEAR_BOARDS = "CLEAR_BOARDS";
+
+export const clearBoards = () => ({
+  type: CLEAR_BOARDS
+});
 
 export const receivedBoards = boards => {
   return {

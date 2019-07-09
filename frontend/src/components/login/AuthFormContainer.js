@@ -14,7 +14,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createBoard: board => dispatch(createBoard(board)),
     registerUser: user => dispatch(registerUser(user)),
     loginUser: user => dispatch(loginUser(user)),
     fetchAllPins: () => dispatch(fetchAllPins())
