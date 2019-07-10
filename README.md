@@ -2,7 +2,7 @@
 
 ### There are a few steps so please follow carefully
 
-#### - This app utilizes Postgres server and make you have a Postgres server running on your machine.
+#### - This app utilizes Postgres server and make sure you have a Postgres server running on your machine.
 
 #### - cd into "backend" folder and then cd into "db" folder.
 
